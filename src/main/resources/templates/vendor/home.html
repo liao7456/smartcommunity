@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>主页</title>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/static_style.css}"/>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/home_style.css}"/>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/slider/index.css}"/>
+</head>
+<body>
+<div class="container">
+    <div class="home_one">
+        <div style="height: 50px"></div>
+        <div class="home_one_dwon">
+            <div class="home_one_dwon_left" th:text="${plot.plot_name}">
+                成华小区
+            </div>
+            <div class="home_one_dwon_center">
+                迷家
+            </div>
+            <div class="home_one_dwon_right">
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/002.jpg}"/>
+            </div>
+        </div>
+    </div>
+    <div class="home_two">
+        <div class="jd_layout">
+            <div class="jd_banner">
+                <ul class="clearfix">
+                    <li th:each="slider : ${sliderList}"><a href="#"><img style="height: 260px;width: 100%" th:src="${slider.slider_url}"/></a></li>
+                </ul>
+                <ul class="bottom_button">
+                    <li class="now"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="home_three">
+        <div class="home_three_one">
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/301.jpg}" height="120" width="120"/><br/>
+                <span>社区超市</span>
+            </div>
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/302.jpg}" height="120" width="120"/><br/>
+                <span>快递寄送</span>
+            </div>
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/303.jpg}" height="120" width="120"/><br/>
+                <span>家政服务</span>
+            </div>
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/304.jpg}" height="120" width="120"/><br/>
+                <span>便民洗涤</span>
+            </div>
+        </div>
+        <div class="home_three_two">
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/305.jpg}" height="120" width="120"/><br/>
+                <span>洗车预约</span>
+            </div>
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/306.jpg}" height="120" width="120"/><br/>
+                <span>社区二手</span>
+            </div>
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/307.jpg}" height="120" width="120"/><br/>
+                <span>物业服务</span>
+            </div>
+            <div>
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/308.jpg}" height="120" width="120"/><br/>
+                <span>装修服务</span>
+            </div>
+        </div>
+    </div>
+    <div class="home_three_four">
+
+    </div>
+    <div class="home_four">
+        <div class="home_four_left">
+            小区公告
+        </div>
+        <div class="home_four_right">
+            <div>
+                业主投票
+            </div>
+            <div>
+                物业工作展示
+            </div>
+            <div>
+                物业报修
+            </div>
+        </div>
+    </div>
+    <div class="home_five">
+        <div>
+            <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/501.jpg}"/><br/>
+            主页
+        </div>
+        <div>
+            <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/502.jpg}"/><br/>
+            订单
+        </div>
+        <div>
+            <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/503.jpg}"/><br/>
+            我的
+        </div>
+        <div>
+            <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/504.jpg}" /><br/>
+            更多
+        </div>
+    </div>
+</div>
+<script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/jquery-3.1.1.min.js}"></script>
+<script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/slider/scroll.js}"></script>
+<script>
+    $(function(){
+        $(document).time_Scroll();
+    });
+</script>
+</body>
+</html>

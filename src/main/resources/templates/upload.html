@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Upload Page</title>
+
+    <style>
+
+        * {
+            font-family: "Microsoft YaHei UI";
+        }
+
+        .uploadButton {
+            width: 200px;
+            height: 60px;
+            border-radius: 25px;
+            background-color: beige;
+            display: flex;
+            flex-flow: row nowrap;
+
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="upload_one">
+            <div class="uploadButton" id="uploadButton_one">
+                <div style="margin: auto;font-weight: bold; font-size: 24px; cursor: pointer;">+ 图片1</div>
+            </div>
+
+            <h3>你的上传文件最后的七牛URL地址是</h3>
+            <a style="font-size: 26px;" id="result_one" href="#">
+            </a>
+        </div>
+        <div class="upload_two">
+            <div class="uploadButton" id="uploadButton_two">
+                <div style="margin: auto;font-weight: bold; font-size: 24px; cursor: pointer;">+ 图片2</div>
+            </div>
+
+            <h3>你的上传文件最后的七牛URL地址是</h3>
+            <a style="font-size: 26px;" id="result_two" href="#">
+            </a>
+        </div>
+        <div class="upload_three">
+            <div class="uploadButton" id="uploadButton_three">
+                <div style="margin: auto;font-weight: bold; font-size: 24px; cursor: pointer;">+ 图片3</div>
+            </div>
+
+            <h3>你的上传文件最后的七牛URL地址是</h3>
+            <a style="font-size: 26px;" id="result_three" href="#">
+            </a>
+        </div>
+        <div class="upload_four">
+            <div class="uploadButton" id="uploadButton_four">
+                <div style="margin: auto;font-weight: bold; font-size: 24px; cursor: pointer;">+ 图片4</div>
+            </div>
+
+            <h3>你的上传文件最后的七牛URL地址是</h3>
+            <a style="font-size: 26px;" id="result_four" href="#">
+            </a>
+        </div>
+    </div>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/qiniu.js}"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            var _token = null;
+
+            $.ajax({
+                url: '/token',
+                type: 'get',
+                success: function (data) {
+                    _token = data;
+                    console.debug('A: ' + _token);
+                }
+            });
+
+            // 上传空间URL
+            var uploadSpace = 'http://osicxcuxf.bkt.clouddn.com';
+
+            qiniu.config({
+                url: uploadSpace,
+                uploadUrl: 'up-z2.qiniu.com' // 七牛统一的一个上传域名，固定
+            });
+
+
+            qiniu.bind($('#uploadButton_one'), {
+                filter: 'image'
+            }).on('file', function(file) {
+
+                console.debug('---');
+
+                var imagesBucket = qiniu.bucket('learning', {
+                    putToken: _token
+                });
+
+
+                console.debug(file);
+
+                var fileName = file.name;
+
+                fileName = 'img/' + fileName;
+
+                console.debug('文件名：'  + fileName);
+
+                // Upload
+                imagesBucket.putFile(fileName, file)
+                    .then(
+                        function(reply) {
+                            // 上传成功
+                            console.dir("成功"+reply);
+                            console.debug(reply.hash);
+                            console.debug(reply.key);
+                            var se = new Date().getMilliseconds();
+                            var _data = {};
+                            _data.slider_id = 1;
+                            _data.slider_url = uploadSpace + '/' + fileName + '?v=' + se;
+                            $.ajax({
+                                type: 'post',
+                                url: '/vendor/upload_slider',
+                                data: JSON.stringify(_data),
+                                contentType: "application/json",
+                                success: function (data) {
+                                    console.debug(data);
+                                    if(data == "success"){
+                                        $('#result_one').html(uploadSpace + '/' + fileName + '?v=' + se);
+                                        $('#result_one').prop('href', uploadSpace + '/' + fileName + '?v=' + se);
+                                    }
+                                },
+                                error: function (data, status, er) {
+                                    console.debug("error: "+data+" status: "+status+" er:"+er);
+                                }
+                            });
+                        },
+                        function(err) {
+                            // 上传失败
+                            console.error("失败"+err);
+                        }
+                    );
+            });
+
+            qiniu.bind($('#uploadButton_two'), {
+                filter: 'image'
+            }).on('file', function(file) {
+
+                console.debug('---');
+
+                var imagesBucket = qiniu.bucket('learning', {
+                    putToken: _token
+                });
+
+
+                console.debug(file);
+
+                var fileName = file.name;
+
+                fileName = 'img/' + fileName;
+
+                console.debug('文件名：'  + fileName);
+
+                // Upload
+                imagesBucket.putFile(fileName, file)
+                    .then(
+                        function(reply) {
+                            // 上传成功
+//                            console.dir(reply);
+                            console.debug(reply.hash);
+                            console.debug(reply.key);
+                            var se = new Date().getMilliseconds();
+                            var _data = {};
+                            _data.slider_id = 2;
+                            _data.slider_url = uploadSpace + '/' + fileName + '?v=' + se;
+                            $.ajax({
+                                type: 'post',
+                                url: '/vendor/upload_slider',
+                                data: JSON.stringify(_data),
+                                contentType: "application/json",
+                                success: function (data) {
+                                    console.debug(data);
+                                    if(data == "success"){
+                                        $('#result_two').html(uploadSpace + '/' + fileName + '?v=' + se);
+                                        $('#result_two').prop('href', uploadSpace + '/' + fileName + '?v=' + se);
+                                    }
+                                },
+                                error: function (data, status, er) {
+                                    console.debug("error: "+data+" status: "+status+" er:"+er);
+                                }
+                            });
+                        },
+                        function(err) {
+                            // 上传失败
+                            console.error(err);
+                        }
+                    );
+            });
+            qiniu.bind($('#uploadButton_three'), {
+                filter: 'image'
+            }).on('file', function(file) {
+
+                console.debug('---');
+
+                var imagesBucket = qiniu.bucket('learning', {
+                    putToken: _token
+                });
+
+
+                console.debug(file);
+
+                var fileName = file.name;
+
+                fileName = 'img/' + fileName;
+
+                console.debug('文件名：'  + fileName);
+
+                // Upload
+                imagesBucket.putFile(fileName, file)
+                    .then(
+                        function(reply) {
+                            // 上传成功
+//                            console.dir(reply);
+                            console.debug(reply.hash);
+                            console.debug(reply.key);
+                            var se = new Date().getMilliseconds();
+                            var _data = {};
+                            _data.slider_id = 3;
+                            _data.slider_url = uploadSpace + '/' + fileName + '?v=' + se;
+                            $.ajax({
+                                type: 'post',
+                                url: '/vendor/upload_slider',
+                                data: JSON.stringify(_data),
+                                contentType: "application/json",
+                                success: function (data) {
+                                    console.debug(data);
+                                    if(data == "success"){
+                                        $('#result_three').html(uploadSpace + '/' + fileName + '?v=' + se);
+                                        $('#result_three').prop('href', uploadSpace + '/' + fileName + '?v=' + se);
+                                    }
+                                },
+                                error: function (data, status, er) {
+                                    console.debug("error: "+data+" status: "+status+" er:"+er);
+                                }
+                            });
+                        },
+                        function(err) {
+                            // 上传失败
+                            console.error(err);
+                        }
+                    );
+            });
+            qiniu.bind($('#uploadButton_four'), {
+                filter: 'image'
+            }).on('file', function(file) {
+
+                console.debug('---');
+
+                var imagesBucket = qiniu.bucket('learning', {
+                    putToken: _token
+                });
+
+
+                console.debug(file);
+
+                var fileName = file.name;
+
+                fileName = 'img/' + fileName;
+
+                console.debug('文件名：'  + fileName);
+
+                // Upload
+                imagesBucket.putFile(fileName, file)
+                    .then(
+                        function(reply) {
+                            // 上传成功
+//                            console.dir(reply);
+                            console.debug(reply.hash);
+                            console.debug(reply.key);
+                            var se = new Date().getMilliseconds();
+                            var _data = {};
+                            _data.slider_id = 4;
+                            _data.slider_url = uploadSpace + '/' + fileName + '?v=' + se;
+                            $.ajax({
+                                type: 'post',
+                                url: '/vendor/upload_slider',
+                                data: JSON.stringify(_data),
+                                contentType: "application/json",
+                                success: function (data) {
+                                    console.debug(data);
+                                    if(data == "success"){
+                                        $('#result_four').html(uploadSpace + '/' + fileName + '?v=' + se);
+                                        $('#result_four').prop('href', uploadSpace + '/' + fileName + '?v=' + se);
+                                    }
+                                },
+                                error: function (data, status, er) {
+                                    console.debug("error: "+data+" status: "+status+" er:"+er);
+                                }
+                            });
+                        },
+                        function(err) {
+                            // 上传失败
+                            console.error(err);
+                        }
+                    );
+            });
+
+        });
+
+        $.extend({
+            upload2Qiniu:function () {
+
+            }
+        });
+    </script>
+</body>
+</html>

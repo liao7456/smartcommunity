@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>plot</title>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/jquery-3.1.1.min.js}"></script>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/static_style.css}"/>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/plot_style.css}"/>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/plot.js}"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="plot_one">
+
+    </div>
+    <div class="plot_two">
+        <div class="plot_two_return">
+            <a href="javascript:history.go(-1)"> &lt;</a>
+        </div>
+        <div class="plot_two_plot">
+            选择小区
+        </div>
+        <div class="plot_two_span">
+            &nbsp;
+        </div>
+    </div>
+    <div class="plot_three">
+        <div class="plot_three_areaplot_flex_top">
+            <div class="plot_three_areaplot">
+                <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/plot-3-1.jpg}"/>
+            </div>
+            <div>
+                <button class="plot_three_areaplot_button" name="plot_id" id="plot_name">点击选择小区</button>
+            </div>
+        </div>
+        <div class="plot_three_areaplot_flex_body">
+            <div th:each="word : ${word}">
+                <div class="plot_three_span_backgc">
+                    <div class="plot_three_span" th:text="${word}">${word}</div>
+                </div>
+                <div th:each="area : ${areaList}">
+                    <button class="plot_three_plotclick" th:if="${area.area_spell} == ${word}"
+                            th:text="${area.area_name}">
+                        ${area.area_name}
+                    </button>
+                    <div class="plot_three_plot" th:if="${area.area_spell} == ${word}">
+                        <div th:each="plot : ${plotList}"
+                             th:if="${plot.area_id} == ${area.area_id}">
+                            <button class="plot_button" th:name="${plot.plot_id}" th:text="${plot.plot_name}"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

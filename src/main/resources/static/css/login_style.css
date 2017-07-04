@@ -1,0 +1,84 @@
+
+.container{
+    background: linear-gradient(to right ,#f85661,#f24268);
+}
+.login_one{
+    height: 70px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}
+.login_two{
+    height: 55px;
+    font-size: 3em;
+    color: white;
+    margin: 0 0.5em;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.login_two_return{
+    width: 100px;
+}
+.login_two_login{
+    width: 100px;
+}
+.login_two_signin{
+    width: 100px;
+}
+.login_three{
+    margin: 0 auto;
+    height: 450px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}
+.login_four{
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.login_four span{
+    margin-left: 20px;
+    font-size: 1.8em;
+    color: white;
+}
+.login_four_input{
+    background-color: transparent;
+    width: 710px;
+    height: 50px;
+    color: white;
+    font-size: 2em;
+    margin: 0px 0px 30px 20px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid white;
+}
+.login_four_button{
+    background-color: transparent;
+    width: 710px;
+    height: 100px;
+    color: white;
+    font-size: 3em;
+    font-family: 华文细黑;
+    margin: 20px 20px;
+    border-radius: 50px;
+    border: solid 1px white;
+}
+.login_four_forget_pwd{
+    font-size: 1.8em;
+    color: white;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+.login_down{
+    height: 300px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}

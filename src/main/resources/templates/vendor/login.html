@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登录</title>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/static_style.css}"/>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/login_style.css}"/>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/login.js}"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="login_one">
+
+    </div>
+    <div class="login_two">
+        <div class="login_two_return">
+           <a href="javascript:history.go(-1)">&lt;</a>
+        </div>
+        <div class="login_two_login">
+            登录
+        </div>
+        <div class="login_two_signin">
+            <a href="/vendor/signin">注册</a>
+        </div>
+    </div>
+    <div class="login_three">
+        <img th:src="@{http://osicxcuxf.bkt.clouddn.com/img/l-301.jpg}"/>
+    </div>
+    <div class="login_four">
+        <form>
+            <div>
+                <span>手机</span><br/>
+                <input type="text" class="login_four_input user_tel" name="user_tel"/><br/>
+                <span>密码</span><br/>
+                <input type="password" class="login_four_input user_pwd" name="user_pwd"/><br/>
+                <div class="login_error"></div>
+                <input type="button" class="login_four_button" value="登录"/><br/>
+                <div class="login_four_forget_pwd"><a href="forgetpwd">忘记密码？</a></div>
+            </div>
+        </form>
+    </div>
+    <div class="login_down">
+
+    </div>
+</div>
+</body>
+</html>

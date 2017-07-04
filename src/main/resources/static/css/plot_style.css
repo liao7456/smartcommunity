@@ -1,0 +1,93 @@
+
+.container{
+    background: linear-gradient(to right ,#f85661,#f24268);
+}
+.plot_one{
+    height: 3em;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}
+.plot_two{
+    height: 2em;
+    font-size: 3em;
+    color: white;
+    margin: 0 20px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.plot_two_return{
+    width: 200px;
+}
+.plot_two_return a{
+    color: white;
+}
+.plot_two_plot{
+    width: 200px;
+}
+.plot_two_span{
+    width: 200px;
+}
+.plot_three{
+    font-size: 2.5em;
+    background-color: white;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.plot_three_areaplot_flex_top{
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}
+.plot_three_areaplot_flex_body{
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.plot_three_areaplot{
+    height: 65px;
+}
+.plot_three_areaplot_button{
+    font-size: 1em;
+    height: 65px;
+    color: #F14368;
+    border: transparent;
+    background-color: transparent;
+}
+.plot_three_span_backgc{
+    background-color: #EBE9EA;
+}
+.plot_three_span{
+    margin-left: 0.5em;
+    color: #B4B4B4;
+    width: 100%;
+}
+.plot_three_plotclick{
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    height: 50px;
+    width: 100%;
+    text-align: left;
+    border: transparent;
+    border-bottom: 2px solid #EBE9EA;
+    background-color: transparent;
+}
+.plot_three_plot button{
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    height: 50px;
+    width: 100%;
+    text-align: left;
+    border: transparent;
+    border-bottom: 2px solid #EBE9EA;
+    background-color: transparent;
+}
+button:hover{
+    cursor: pointer;
+}
+.plot_button{
+    padding-left: 2em;
+}

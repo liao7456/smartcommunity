@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.PlotMapper">
+    <resultMap id="PlotList" type="Plot">
+        <result column="plot_id" property="plot_id"></result>
+        <result column="area_id" property="area_id"></result>
+        <result column="plot_name" property="plot_name"></result>
+        <result column="plot_spell" property="plot_spell"></result>
+    </resultMap>
+    <select id="getAllPlotList" resultMap="PlotList">
+        SELECT * FROM plot
+    </select>
+    <select id="getPlot" parameterType="plot" resultMap="PlotList">
+        SELECT * FROM plot WHERE plot_id = #{plot_id}
+    </select>
+    <select id="getPlotByName" parameterType="plot" resultMap="PlotList">
+        SELECT * FROM plot WHERE plot_name = #{plot_name}
+    </select>
+</mapper>

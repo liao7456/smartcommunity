@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>forget pwd</title>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/forgetpwd_style.css}"/>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/static_style.css}"/>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/forgetpwd.js}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="fp_one">
+
+    </div>
+    <div class="fp_two">
+        <div class="fp_two_return">
+            <a href="javascript:history.go(-1)">&lt;</a>
+        </div>
+        <div class="fp_two_fp">
+            找回密码
+        </div>
+        <div class="fp_two_span">
+            &nbsp;
+        </div>
+    </div>
+    <div class="fp_three">
+        <form name = "user">
+            <div class="fp_three_body">
+                <span>手机号码</span><br/>
+                <input class="fp_three_input fp_three_input_user_tel" type="text" name="user_tel" value="请输入手机号"/>
+                <div class="fp_error" id="user_tel_error"></div>
+                <div class="fp_three_body_message">
+                    <div>
+                        <span>短信验证码</span><br/>
+                        <input class="fp_three_input fp_three_body_message_code" type="text" name="user_verify" />
+                    </div>
+                    <div>
+                        <input id="fp_three_input_get_code"  type="button" value="获取验证码"/>
+                        <span id="message_code"></span>
+                    </div>
+                </div>
+                <div class="fp_error" id="message_code_error"></div>
+                <span>新密码</span><br/>
+                <input class="fp_three_input fp_three_input_user_pwd" type="password" name="user_pwd" /><br/>
+                <div class="fp_error" id="user_pwd_error"></div>
+                <span>确认密码</span><br/>
+                <input class="fp_three_input fp_three_input_user_repwd" type="password" name="user_repwd" /><br/>
+                <div class="fp_error" id="user_repwd_error"></div>
+                <input class="fp_three_input fp_three_input_user_accessright" type="hidden" name="user_accessright" value="4" />
+            </div>
+            <div> <input class="fp_three_button" type="button" value="找回密码"/></div>
+        </form>
+    </div>
+    <div class="forgetpwd_down"></div>
+</div>
+</body>
+</html>

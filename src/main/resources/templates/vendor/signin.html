@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>sign in</title>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/static_style.css}"/>
+    <link rel="stylesheet" th:href="@{http://osicxcuxf.bkt.clouddn.com/css/signin_style.css}"/>
+</head>
+<body>
+<div class="container">
+    <div class="signin_one">
+
+    </div>
+    <div class="signin_two">
+        <div class="signin_two_return">
+            <a href="javascript:history.go(-1)">&lt;</a>
+        </div>
+        <div class="signin_two_signin">
+            注册
+        </div>
+        <div class="signin_two_span">
+            &nbsp;
+        </div>
+    </div>
+    <div class="signin_three">
+        <form name="signin">
+            <div class="signin_three_body">
+
+                <span>手机号码</span><br/>
+                <input class="signin_three_input user_tel" type="text" name="user_tel" /><br/>
+                <div class="signin_error" id="user_tel_error"></div>
+
+                <div class="signin_three_body_message">
+                    <div>
+                        <span>短信验证码</span><br/>
+                        <input class="signin_three_input signin_three_body_message_code" type="text" name="user_verify" />
+                    </div>
+                    <div>
+                        <input class="signin_three_input_get_code" id="signin_three_input_get_code" type="button" value="获取验证码"/>
+                        <span id="message_code"></span>
+                    </div>
+                </div>
+                <div class="signin_error" id="user_verify_error"></div>
+
+                <span>昵称</span><br/>
+                <input class="signin_three_input user_nickname" type="text" name="user_nickname" /><br/>
+                <div class="signin_error" id="user_nickname_error"></div>
+
+                <span>真实姓名</span><br/>
+                <input class="signin_three_input user_name" type="text" name="user_name" /><br/>
+                <div class="signin_error" id="user_name_error"></div>
+
+                <span>所在小区</span><br/>
+                <input class="signin_three_input plot_id" id="plot_id" type="text" value="点击选择小区" name="plot_id" />
+                <br/>
+                <div class="signin_error" id="plot_id_error"></div>
+
+                <span>详细地址</span><br/>
+                <input class="signin_three_input user_add" type="text" name="user_add" /><br/>
+                <div class="signin_error" id="user_add_error"></div>
+
+                <span>登录密码</span><br/>
+                <input class="signin_three_input user_pwd" type="password" name="user_pwd" /><br/>
+                <div class="signin_error" id="user_pwd_error"></div>
+
+                <span>确认密码</span><br/>
+                <input class="signin_three_input user_repwd" type="password" name="user_repwd" /><br/>
+                <div class="signin_error" id="user_repwd_error"></div>
+
+                <input class="signin_three_input user_accessright" type="hidden" name="user_accessright" value="4" />
+            </div>
+            <div> <input class="signin_three_button" type="button" value="提交注册"/></div>
+        </form>
+    </div>
+    <div class="signin_down">
+
+    </div>
+</div>
+<script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/jquery-3.1.1.min.js}"></script>
+<script th:src="@{http://osicxcuxf.bkt.clouddn.com/js/signin.js}"></script>
+</body>
+</html>

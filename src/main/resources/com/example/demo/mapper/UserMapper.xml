@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <resultMap id="User" type="User">
+        <id column="user_tel" property="user_tel"></id>
+        <result column="user_nickname" property="user_nickname"></result>
+        <result column="user_name" property="user_name"></result>
+        <result column="plot_id" property="plot_id"></result>
+        <result column="user_add" property="user_add"></result>
+        <result column="user_pwd" property="user_pwd"></result>
+        <result column="user_accessright" property="user_accessright"></result>
+    </resultMap>
+
+    <insert id="newUser" parameterType="user">
+        INSERT INTO
+        user(user_tel,user_nickname,user_name,plot_id,user_add,user_pwd,user_accessright)
+        VALUES
+        (#{user_tel},#{user_nickname},#{user_name},#{plot_id},#{user_add},#{user_pwd},#{user_accessright})
+    </insert>
+
+    <select id="selectUser" resultType="user" resultMap="User">
+        SELECT * FROM user WHERE user_tel = #{user_tel} AND user_pwd = #{user_pwd};
+    </select>
+
+    <select id="selectTel" resultType="user" resultMap="User">
+        SELECT * FROM user WHERE user_tel = #{user_tel};
+    </select>
+
+    <select id="selectUserByTel" resultType="user" resultMap="User">
+        SELECT * FROM user WHERE user_tel = #{user_tel};
+    </select>
+
+    <!--修改密码-->
+    <update id="uploadUserPwd" parameterType="user">
+        UPDATE user SET user_pwd=#{user_pwd} WHERE user_tel=#{user_tel}
+    </update>
+
+</mapper>

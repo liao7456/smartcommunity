@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 黑体;
+}
+ul{
+    list-style: none;
+}
+input:focus {
+    outline: none;
+}
+button:focus{
+    outline: none;
+}
+.container{
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}

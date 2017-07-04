@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.AreaMapper">
+    <resultMap id="AreaList" type="Area">
+        <id column="area_id" property="area_id"></id>
+        <result column="area_name" property="area_name"></result>
+        <result column="area_spell" property="area_spell"></result>
+    </resultMap>
+    <select id="getAllAreaList" resultMap="AreaList">
+        SELECT * FROM area
+    </select>
+</mapper>

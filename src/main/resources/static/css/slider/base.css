@@ -1,0 +1,61 @@
+::before,
+::after{
+    /*选择所有的标签*/
+    margin: 0;
+    padding: 0;
+    /*清除移动的默认的点击高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+    /*设置所有的都是以边框开始计算 百分比*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;/*设备默认字体*/
+    color: #333;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+input{
+    border: none;
+    outline: none;
+    /*清除默认的表单样式*/
+    -webkit-appearance: none;
+}
+
+/*common css*/
+.f_left{
+    float: left;
+}
+
+.f_right{
+    float: right;
+}
+
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+[class ^="icon_"]{
+    background: url("../images/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
+
+ul{
+    list-style: none;
+}

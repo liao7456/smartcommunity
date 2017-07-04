@@ -1,0 +1,10 @@
+
+
+.container{
+    background: linear-gradient(to right ,#f85661,#f24268);
+}
+body div img{
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}

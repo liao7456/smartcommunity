@@ -1,0 +1,112 @@
+
+
+.container{
+    background: linear-gradient(to right ,#f85661,#f24268);
+}
+
+.fp_one{
+    height: 70px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}
+.fp_two{
+    height: 55px;
+    font-size: 3em;
+    color: white;
+    margin: 0 20px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.fp_two_return{
+    width: 100px;
+}
+.fp_two_signin{
+    width: 100px;
+}
+.fp_two_span{
+    width: 100px;
+}
+.fp_three{
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+    margin: 0 auto;
+}
+.fp_three_body{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 20px;
+}
+.fp_three span{
+    font-size: 1.5em;
+    color: white;
+}
+.fp_three_input{
+    background-color: transparent;
+    width: 710px;
+    height: 30px;
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid white;
+}
+.fp_three_body_message{
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+}
+.fp_three_body_message_code{
+    background-color: transparent;
+    width: 540px;
+    height: 30px;
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid white;
+}
+#fp_three_input_get_code{
+    background-color: transparent;
+    width: 170px;
+    height: 76px;
+    color: white;
+    font-size: 1.5em;
+    font-family: 华文细黑;
+    margin: 20px 0px;
+    border-radius: 38px;
+    border: solid 1px white;
+}
+.fp_three_button{
+    background-color: transparent;
+    width: 710px;
+    height: 100px;
+    color: white;
+    font-size: 3em;
+    font-family: 华文细黑;
+    margin: 20px 20px;
+    border-radius: 50px;
+    border: solid 1px white;
+}
+.fp_error{
+    color: yellow;
+}
+#message_code{
+    display: none;
+}
+.forgetpwd_down{
+    height: 500px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}

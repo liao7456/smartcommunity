@@ -1,0 +1,118 @@
+
+.container{
+    background-color: #FFFFFF;
+}
+.home_one{
+    height: 152px;
+    background-color: #F54B65;
+    color: white;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.home_one_dwon{
+    height: 100px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.home_one_dwon_left{
+    padding-left: 0.5em;
+    font-size: 2.5em;
+    width: 250px;
+    text-align: left;
+}
+.home_one_dwon_center{
+    font-size: 3em;
+    width: 250px;
+    text-align: center;
+}
+.home_one_dwon_right{
+    width: 250px;
+    text-align: right;
+}
+.home_two{
+    margin: 0 auto;
+}
+.home_three{
+    height: 387px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.home_three_one{
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+ }
+.home_three_two{
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.home_three_four{
+    background-color: #f0f0f0;
+    height: 10px;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}
+.home_four{
+    margin: 0 auto;
+    border-bottom: 1px solid #f0f0f0;
+    height: 405px;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+}
+.home_four_left{
+    border: 2px solid #f0f0f0;
+    margin: 2%;
+    padding: 10px;
+    height: 358px;
+    width: 46%;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.home_four_right{
+    width: 50%;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.home_four_right div{
+    border: 2px solid #f0f0f0;
+    margin: 4% 4% 4% 0;
+    padding: 10px;
+    height: 115px;
+    width: 88%;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+}
+.home_five{
+    color: #f44667;
+    height: 116px;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.home_five div{
+    color: #fa99a0;
+}

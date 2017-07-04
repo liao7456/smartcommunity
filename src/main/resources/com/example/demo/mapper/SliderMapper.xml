@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.SliderMapper">
+    <resultMap id="SliderList" type="Slider">
+        <result column="slider_id" property="slider_id"></result>
+        <result column="slider_url" property="slider_url"></result>
+    </resultMap>
+    <select id="getAllSliderList" resultMap="SliderList">
+        SELECT * FROM slider ORDER BY slider_id
+    </select>
+    <update id="updateSlider" parameterType="slider">
+        UPDATE slider SET slider_url=#{slider_url} WHERE slider_id=#{slider_id}
+    </update>
+</mapper>
